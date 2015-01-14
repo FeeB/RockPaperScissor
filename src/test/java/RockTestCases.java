@@ -1,7 +1,9 @@
 package test.java;
 
 import static org.junit.Assert.*;
+import main.java.models.Paper;
 import main.java.models.Rock;
+import main.java.models.Scissor;
 
 import org.junit.Test;
 
@@ -11,17 +13,20 @@ public Rock rock = new Rock();
 	
 	@Test
 	public void testBeatsRock() {
-		assertEquals(0, rock.beatsRock());
+		Rock rock = new Rock();
+		assertEquals(0, rock.beatsItem(rock));
 	}
 	
 	@Test
 	public void testBeatsPaper() {
-		assertEquals(-1, rock.beatsPaper());
+		Paper paper = new Paper();
+		assertEquals(-1, rock.beatsItem(paper));
 	}
 	
 	@Test
 	public void testBeatsScissor() {
-		assertEquals(1, rock.beatsScissor());
+		Scissor scissor = new Scissor();
+		assertEquals(1, rock.beatsItem(scissor));
 	}
 
 }

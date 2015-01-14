@@ -7,19 +7,11 @@ public class Paper implements Item{
 		return this.name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setName() {
+		this.name = "Paper";
 	}
 	
-	public int beatsScissor() {
-		return -1;
-	}
-	
-	public int beatsRock() {
-		return 1;
-	}
-	
-	public int beatsPaper() {
+	public int beatsItem(Item item) {
 		return 0;
 	}
 }
