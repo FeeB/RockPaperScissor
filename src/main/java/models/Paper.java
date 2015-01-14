@@ -1,7 +1,7 @@
 package main.java.models;
 
 public class Paper implements Item{
-	public String name = "Paper";
+	private String name = "Paper";
 	
 	public String getName() {
 		return this.name;
