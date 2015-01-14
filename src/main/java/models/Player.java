@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Player {
 	private Item selectedItem;
+	private String name;
 	
 	public void selectItem(Item item) {
 		this.selectedItem = item;
@@ -34,4 +35,13 @@ public class Player {
 	public Item getSelectedItem() {
 		return this.selectedItem;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 }
