@@ -1,14 +1,14 @@
-package java.main;
+package main.java;
 
-public class Rock implements Item{
+public class Scissor implements Item {
 	private String name;
 	
 	public String getName() {
-		return "";
+		return this.name;
 	}
 	
 	public void setName(String name) {
-		
+		this.name = name;
 	}
 	
 	public int beatsScissor() {
@@ -16,10 +16,10 @@ public class Rock implements Item{
 	}
 	
 	public int beatsRock() {
-		return 0;
+		return -1;
 	}
 	
 	public int beatsPaper() {
-		return 0;
+		return 1;
 	}
 }

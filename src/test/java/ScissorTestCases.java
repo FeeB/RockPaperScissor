@@ -1,10 +1,8 @@
-package java.test;
+package test.java;
 
 import static org.junit.Assert.*;
-
-import java.main.Scissor;
-
 import junit.framework.Assert;
+import main.java.Scissor;
 
 import org.junit.Test;
 

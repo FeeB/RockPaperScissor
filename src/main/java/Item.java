@@ -1,4 +1,4 @@
-package java.main;
+package main.java;
 
 public interface Item {
 	String name = "";

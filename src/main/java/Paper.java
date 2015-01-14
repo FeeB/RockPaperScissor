@@ -1,6 +1,6 @@
-package java.main;
+package main.java;
 
-public class Scissor implements Item {
+public class Paper implements Item{
 	private String name;
 	
 	public String getName() {

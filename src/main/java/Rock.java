@@ -1,6 +1,6 @@
-package java.main;
+package main.java;
 
-public class Paper implements Item{
+public class Rock implements Item{
 	private String name;
 	
 	public String getName() {
