@@ -1,4 +1,4 @@
-package test.java;
+package test.java.models;
 
 import static org.junit.Assert.*;
 import main.java.models.Paper;
