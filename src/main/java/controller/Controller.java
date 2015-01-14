@@ -7,13 +7,17 @@ public class Controller {
 	private Player playerOne = new Player();
 	private Player playerTwo = new Player();
 	
-	public void setSelectedItem(Item itemPlayerOne, Item itemPlayerTwo) throws Exception {
-		this.playerOne.selectItem(itemPlayerOne);
+	public void setSelectedItem(Item itemPlayerOne) throws Exception {
+		this.playerTwo.selectItemRandomly();
 		
-		if (this.playerTwo.getName().equals("Computer")) {
-			this.playerTwo.selectItemRandomly();
+		if ((this.playerOne.getName() != null) && (this.playerOne.getName().equals("Computer"))) {
+			try {
+				this.playerOne.selectItemRandomly();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 		} else {
-			this.playerTwo.selectItem(itemPlayerTwo);
+			this.playerOne.selectItem(itemPlayerOne);
 		}
 	}
 	
