@@ -4,15 +4,15 @@ public class Rock implements Item{
 	private String name;
 	
 	public String getName() {
-		return "";
+		return this.name;
 	}
 	
 	public void setName(String name) {
-		
+		this.name = name;
 	}
 	
 	public int beatsScissor() {
-		return 0;
+		return 1;
 	}
 	
 	public int beatsRock() {
@@ -20,6 +20,6 @@ public class Rock implements Item{
 	}
 	
 	public int beatsPaper() {
-		return 0;
+		return -1;
 	}
 }
