@@ -19,7 +19,7 @@ public class PlayerTestCases {
 	}
 	
 	@Test
-	public void testSelectItemRandomly() {
+	public void testSelectItemRandomly() throws Exception {
 		player.selectItemRandomly();
 		assertTrue(player.getSelectedItem() instanceof main.java.models.Item);
 	}
