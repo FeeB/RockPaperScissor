@@ -2,7 +2,7 @@ package test.java;
 
 import static org.junit.Assert.*;
 import junit.framework.Assert;
-import main.java.Scissor;
+import main.java.models.Scissor;
 
 import org.junit.Test;
 

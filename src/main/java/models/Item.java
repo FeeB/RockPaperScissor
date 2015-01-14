@@ -1,4 +1,4 @@
-package main.java;
+package main.java.models;
 
 public interface Item {
 	String name = "";

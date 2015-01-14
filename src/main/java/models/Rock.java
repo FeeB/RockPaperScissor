@@ -1,6 +1,6 @@
-package main.java;
+package main.java.models;
 
-public class Scissor implements Item {
+public class Rock implements Item{
 	private String name;
 	
 	public String getName() {
@@ -12,14 +12,14 @@ public class Scissor implements Item {
 	}
 	
 	public int beatsScissor() {
-		return 0;
+		return 1;
 	}
 	
 	public int beatsRock() {
-		return -1;
+		return 0;
 	}
 	
 	public int beatsPaper() {
-		return 1;
+		return -1;
 	}
 }

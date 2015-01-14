@@ -1,7 +1,7 @@
 package test.java;
 
 import static org.junit.Assert.*;
-import main.java.Rock;
+import main.java.models.Rock;
 
 import org.junit.Test;
 

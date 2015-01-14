@@ -1,7 +1,7 @@
 package test.java;
 
 import static org.junit.Assert.*;
-import main.java.Paper;
+import main.java.models.Paper;
 
 import org.junit.Test;
 
