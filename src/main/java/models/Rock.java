@@ -1,14 +1,10 @@
 package main.java.models;
 
 public class Rock implements Item{
-	private String name;
+	private String name = "Rock";
 	
 	public String getName() {
 		return this.name;
-	}
-	
-	public void setName() {
-		this.name = "Rock";
 	}
 	
 	public int beatsItem(Item item) {

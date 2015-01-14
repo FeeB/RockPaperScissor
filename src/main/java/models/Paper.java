@@ -1,17 +1,21 @@
 package main.java.models;
 
 public class Paper implements Item{
-	private String name;
+	public String name = "Paper";
 	
 	public String getName() {
 		return this.name;
 	}
 	
-	public void setName() {
-		this.name = "Paper";
-	}
-	
-	public int beatsItem(Item item) {
-		return 0;
+	public int beatsItem(Item item) throws Exception {
+		if (item.getName().equals("Scissor")){
+			return -1;
+		} else if (item.getName().equals("Paper")) {
+			return 0;
+		} else if (item.getName().equals("Rock")) {
+			return 1;
+		} else {
+			throw new Exception("Unknown Item!");
+		}
 	}
 }
