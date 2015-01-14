@@ -17,42 +17,8 @@ public class ControllerTestCases {
 	public Rock rock = new Rock();
 	
 	@Test
-	public void testSetSelectedItem() throws Exception {
-		controller.getPlayerTwo().setName("Player");
-		controller.setSelectedItem(scissor, paper);
-
-		assertEquals(controller.getPlayerOne().getSelectedItem(), scissor);
-		assertEquals(controller.getPlayerTwo().getSelectedItem(), paper);
-	}
-	
-	@Test
-	public void testCalculateWinnerScissorPaper() throws Exception {
-		controller.getPlayerTwo().setName("Player");
-		controller.setSelectedItem(scissor, paper);
-
-		assertEquals(controller.calculateWinner(), controller.getPlayerOne());
-	}
-	
-	@Test
-	public void testCalculateWinnerScissorRock() throws Exception {
-		controller.getPlayerTwo().setName("Player");
-		controller.setSelectedItem(scissor, rock);
-
-		assertEquals(controller.calculateWinner(), controller.getPlayerTwo());
-	}
-	
-	@Test
-	public void testCalculateWinnerRockPaper() throws Exception {
-		controller.getPlayerTwo().setName("Player");
-		controller.setSelectedItem(rock, paper);
-
-		assertEquals(controller.calculateWinner(), controller.getPlayerTwo());
-	}
-	
-	@Test
 	public void testGameWithComputer() throws Exception {
-		controller.getPlayerTwo().setName("Computer");
-		controller.setSelectedItem(rock, null);
+		controller.setSelectedItem(rock);
 		
 		if (controller.getPlayerTwo().getSelectedItem() instanceof main.java.models.Scissor){
 			assertEquals(controller.calculateWinner(), controller.getPlayerOne());
@@ -60,6 +26,39 @@ public class ControllerTestCases {
 			assertEquals(controller.calculateWinner(), null);
 		} else if (controller.getPlayerTwo().getSelectedItem() instanceof main.java.models.Paper){
 			assertEquals(controller.calculateWinner(), controller.getPlayerTwo());
+		}
+	}
+	
+	@Test
+	public void testGameWithTwoComputers() throws Exception {
+		controller.getPlayerOne().setName("Computer");
+		controller.setSelectedItem(rock);
+		
+		if (controller.getPlayerTwo().getSelectedItem() instanceof main.java.models.Scissor){
+			if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Scissor) {
+				assertEquals(controller.calculateWinner(), null);
+			} else if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Rock){
+				assertEquals(controller.calculateWinner(), controller.getPlayerOne());
+			} else if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Paper){
+				assertEquals(controller.calculateWinner(), controller.getPlayerTwo());
+			}
+		} else if (controller.getPlayerTwo().getSelectedItem() instanceof main.java.models.Rock){
+			if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Scissor) {
+				assertEquals(controller.calculateWinner(), controller.getPlayerTwo());
+			} else if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Rock){
+				assertEquals(controller.calculateWinner(), null);
+			} else if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Paper){
+				assertEquals(controller.calculateWinner(), controller.getPlayerOne());
+			}
+			
+		} else if (controller.getPlayerTwo().getSelectedItem() instanceof main.java.models.Paper){
+			if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Scissor) {
+				assertEquals(controller.calculateWinner(), controller.getPlayerOne());
+			} else if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Rock){
+				assertEquals(controller.calculateWinner(), controller.getPlayerTwo());
+			} else if (controller.getPlayerOne().getSelectedItem() instanceof main.java.models.Paper){
+				assertEquals(controller.calculateWinner(), null);
+			}
 		}
 	}
 
