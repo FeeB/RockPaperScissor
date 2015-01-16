@@ -2,8 +2,12 @@ package main.java.controller;
 
 import main.java.models.Item;
 import main.java.models.Player;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-public class Controller {
+@Controller
+public class rpsController {
 	private Player playerOne = new Player();
 	private Player playerTwo = new Player();
 	
@@ -43,5 +47,11 @@ public class Controller {
 	
 	public Player getPlayerTwo() {
 		return this.playerTwo;
+	}
+	
+	@RequestMapping("/welcome")
+	public ModelAndView helloWorld() {
+		String message = "<br><div align='center'>" + "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is comming from CrunchifyHelloWorld.java **********<br><br>";
+		return new ModelAndView("welcome", "message", message);
 	}
 }

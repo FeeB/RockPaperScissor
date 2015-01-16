@@ -1,7 +1,7 @@
 package test.java.models.controller;
 
 import static org.junit.Assert.*;
-import main.java.controller.Controller;
+import main.java.controller.rpsController;
 import main.java.models.Paper;
 import main.java.models.Rock;
 import main.java.models.Scissor;
@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class ControllerTestCases {
 	
-	public Controller controller = new Controller();
+	public rpsController controller = new rpsController();
 	public Scissor scissor = new Scissor();
 	public Paper paper = new Paper();
 	public Rock rock = new Rock();
