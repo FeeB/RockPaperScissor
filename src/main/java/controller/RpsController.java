@@ -2,12 +2,15 @@ package main.java.controller;
 
 import main.java.models.Item;
 import main.java.models.Player;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class rpsController {
+public class RpsController {
 	private Player playerOne = new Player();
 	private Player playerTwo = new Player();
 	
@@ -21,7 +24,7 @@ public class rpsController {
 				// TODO: handle exception
 			}
 		} else {
-			this.playerOne.selectItem(itemPlayerOne);
+			this.playerOne.setSelectedItem(itemPlayerOne);
 		}
 	}
 	
@@ -49,9 +52,15 @@ public class rpsController {
 		return this.playerTwo;
 	}
 	
-	@RequestMapping("/welcome")
-	public ModelAndView helloWorld() {
-		String message = "<br><div align='center'>" + "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is comming from CrunchifyHelloWorld.java **********<br><br>";
-		return new ModelAndView("welcome", "message", message);
-	}
+	@RequestMapping(value="/", method=RequestMethod.GET)
+    public String playerForm(Model model) {
+        model.addAttribute("player", new Player());
+        return "index";
+    }
+	
+	@RequestMapping(value="/", method=RequestMethod.POST)
+	public String playTheGame(@ModelAttribute Player player, Model model) {
+        model.addAttribute("player", player);
+        return "winner";
+    }
 }

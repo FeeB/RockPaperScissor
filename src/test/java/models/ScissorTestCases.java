@@ -1,7 +1,6 @@
 package test.java.models;
 
 import static org.junit.Assert.*;
-import junit.framework.Assert;
 import main.java.models.Paper;
 import main.java.models.Rock;
 import main.java.models.Scissor;

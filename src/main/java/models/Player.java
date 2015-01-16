@@ -6,7 +6,7 @@ public class Player {
 	private Item selectedItem;
 	private String name;
 	
-	public void selectItem(Item item) {
+	public void setSelectedItem(Item item) {
 		this.selectedItem = item;
 	}
 	

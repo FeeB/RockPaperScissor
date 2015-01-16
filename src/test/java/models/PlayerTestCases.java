@@ -14,7 +14,7 @@ public class PlayerTestCases {
 	public void testSelectItem() {
 		Rock rock = new Rock();
 		
-		player.selectItem(rock);
+		player.setSelectedItem(rock);
 		assertEquals(player.getSelectedItem(), rock);
 	}
 	

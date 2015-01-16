@@ -1,0 +1,36 @@
+<html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Rock Paper Scissor Game</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+	</head>
+	<body>
+		<button class="btn btn-default" type="submit">New Game</button>
+		<i class="fa fa-scissors fa-2x"></i>
+		<div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox"> Rock
+			    </label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox"> Paper
+			    </label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox"> Scissor
+			    </label>
+			</div>
+		</div>
+		<form action="#" th:action="@{/}" th:object="${player}" method="post">
+			<input type="text" class="form-control" placeholder="Player A" th:field="*{name}">
+			<input type="submit" value="Play now!" />
+		</form>
+		<p>or</p>
+		<button class="btn btn-default" type="submit">Let the computer play!</button>
+	</body>
+</html>
